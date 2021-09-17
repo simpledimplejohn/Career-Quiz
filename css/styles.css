@@ -1,0 +1,66 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: white;
+}
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: #f4c34d;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+h5 {
+  font-style: bold;
+}
+
+.em {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#quiz {
+
+  border: 2px solid black;
+  
+}
+
+.jumbotron {
+  background-color: white;
+  border: 2px solid black;
+}
+
+.card-body {
+
+  border: 2px solid black;
+}
+.previous {
+  padding: 20px;
+
+  border: 2px solid black;
+}
+#blank{
+  border: 2px solid black;
+}
+#fortran {
+  display: none;
+}
+#cobol {
+  display: none;
+}
+#lisp {
+  display: none;
+}
+#pascal {
+  display: none;
+}
+
+#basic {
+  display: none;
+}
+#javascript {
+  display: none;
+}
+
