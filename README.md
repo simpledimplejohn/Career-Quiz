@@ -14,7 +14,12 @@
 
 ## Description
 
-_This takes a quiz created by career coach Mary Blalock and allows users to get a calculated personality index that measures their _
+_This takes a quiz created by career coach Mary Blalock and allows users to get a calculated personality index that measures their_
+
+### Research & Planning Log
+#### Friday, 09/17
+* 8:00 - 11:30 Set up repo and get files together
+* 1:00 - 4:00 Research client goals, outline project plan
 
 ## Setup/Installation Requirements
 
