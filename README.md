@@ -1,6 +1,6 @@
-# _Choose A Bad Code Language_
+# _Career Quiz Site_
 
-#### _A website that demonstrates the use of branching and jQuery_
+#### _An online personality quiz to help people choose a career path_
 
 #### By _**John Blalock**_
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-_This website demonstrates how a jQuery function can take an input from the user on the webpage and feed that into a branching function that returns an answer.  In this case the user gets to choose which is the worst coding language to learn._
+_This takes a quiz created by career coach Mary Blalock and allows users to get a calculated personality index that measures their _
 
 ## Setup/Installation Requirements
 
