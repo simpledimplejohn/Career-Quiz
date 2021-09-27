@@ -20,6 +20,9 @@ _This takes a quiz created by career coach Mary Blalock and allows users to get 
 #### Friday, 09/17
 * 8:00 - 11:30 Set up repo and get files together
 * 1:00 - 4:00 Research client goals, outline project plan
+#### Friday, 09/24
+* 8:00 - 11:30 researching Three.js and canvas
+* 1:00 - 5:00 Tutorial on Three.js
 
 ## Setup/Installation Requirements
 
