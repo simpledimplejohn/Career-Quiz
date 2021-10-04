@@ -1,10 +1,9 @@
 $(document).ready(function() {
   $("form#quiz-form").submit(function(event) {
     event.preventDefault();
-
-    const time = $("#time").val();
-    const decade = $("#decade").val();
-    const computer =$("#computer").val();
+    const first = $('#first').val();
+    const second = $('#second').val();
+    const third = $('#third').val();
 
     if (decade === "1960" && (time === "lots" || time === "some") && computer === "mainframe") {
       $(".previous").hide();

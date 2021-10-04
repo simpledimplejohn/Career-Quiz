@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
+
   background-color: white;
 }
 h1 {
@@ -30,6 +30,7 @@ h5 {
 .jumbotron {
   background-color: white;
   border: 2px solid black;
+  text-align: center;
 }
 
 .card-body {
