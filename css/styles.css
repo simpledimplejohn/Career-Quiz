@@ -23,45 +23,18 @@ h5 {
 
 #quiz {
 
-  border: 2px solid black;
+
+  background-color: whitesmoke;
   
 }
 
 .jumbotron {
-  background-color: white;
-  border: 2px solid black;
+  background-color: whitesmoke;
   text-align: center;
 }
 
 .card-body {
 
-  border: 2px solid black;
-}
-.previous {
-  padding: 20px;
 
-  border: 2px solid black;
 }
-#blank{
-  border: 2px solid black;
-}
-#fortran {
-  display: none;
-}
-#cobol {
-  display: none;
-}
-#lisp {
-  display: none;
-}
-#pascal {
-  display: none;
-}
-
-#basic {
-  display: none;
-}
-#javascript {
-  display: none;
-}
-
+  
