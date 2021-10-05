@@ -7,7 +7,7 @@ body {
   font-family: "Montserrat";
 }
 .card-body {
-  background-color:#fff0f2;
+  background-color: whitesmoke;
 }
 section {
   min-height: 100vh;
@@ -25,6 +25,15 @@ section {
   border-radius: 8px;
   background-color: white;
 }
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: #f4c34d;
+}
+
+
+
+
+
 .step {
   display: none;
 }
