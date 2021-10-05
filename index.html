@@ -11,32 +11,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>Career Quiz</title>
 </head>
 <body>
   <div class="container">
     <form>
-
+<!-- question 1 -->
       <div class="step step-1 active">
         <div class="card-body">
           <h1>Question 1</h1>
           <h4>How would you like to approach relationships at work?</h4>
         </div>
         <div class="form-group">
-          <label for="firstQuestion">I love relationships and collaboration. They are my favorite part about going to work.</label>
-          <input type="text" id="firstQuestion" name="first-question">
+          <label for="social">Social answer</label>
+          <input type="radio" id="social" name="social" value="1">
         </div>
         <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="last-name">
+          <label for="organized">Organized answer</label>
+          <input type="radio" id="organized" name="organized" value="1">
         </div>
         <div class="form-group">
-          <label for="nickName">Nick Name</label>
-          <input type="text" id="nickName" name="nick-name">
+          <label for="investigative">Investigator answer</label>
+          <input type="radio" id="investigative" name="investigative" value="1">
         </div>
+        <div class="form-group">
+          <label for="Creative">Creative answer</label>
+          <input type="radio" id="creative" name="creative" value="1">
+        </div>
+        <div class="form-group">
+          <label for="Driven">Driven answer</label>
+          <input type="radio" id="driven" name="driven" value="1">
+        </div>
+        <div class="form-group">
+          <label for="Leader">Leader answer</label>
+          <input type="radio" id="leader" name="leader" value="1">
+        </div>
+
         <button type="button" class="next-btn">Next test</button>
       </div>
-
+<!-- question 2 -->
       <div class="step step-2">
         <div class="card-body">
           <h1>Question 2</h1>
@@ -53,7 +66,7 @@
         <button type="button" class="previous-btn">Prev</button>
         <button type="button" class="next-btn">Next</button>
       </div>
-
+<!-- question 3 -->
       <div class="step step-3">
         <div class="card-body">
           <h1>Question 3</h1>
