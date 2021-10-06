@@ -41,6 +41,7 @@ label {
 
 
 
+
 .step {
   display: none;
 }
@@ -57,7 +58,9 @@ label {
 
 button.next-btn,
 button.previous-btn,
-button.submit-btn {
+button.submit-btn,
+button.btn-primary,
+.start {
   float: right;
   margin-top: 20px;
   padding: 10px 30px;
