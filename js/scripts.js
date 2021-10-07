@@ -25,6 +25,7 @@ form.addEventListener("submit", (e) => {
   });
   console.log(inputs);
   form.reset();
+  changeStep("next");
 });
 
 function changeStep(btn) {
