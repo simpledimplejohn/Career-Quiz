@@ -74,7 +74,8 @@ button.next-btn,
 button.previous-btn,
 button.submit-btn,
 button.btn-primary,
-.start {
+.start,
+.restart {
   float: right;
   margin-top: 20px;
   padding: 10px 30px;
@@ -89,7 +90,8 @@ button.btn-primary,
   border-radius: 4px;
   /* text-align: right; */
 }
-button.previous-btn {
+button.previous-btn,
+.restart {
   float: left;
 }
 button.submit-btn {
