@@ -39,7 +39,7 @@ _Copyright (c) 2021 John Blalock_
 
 ## Github Pages Link
 
-[Portfolio](https://simpledimplejohn.github.io/LanguageSuggester)
+[Portfolio](https://simpledimplejohn.github.io/Career-Quiz/)
 
 ## Contact Information
 
