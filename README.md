@@ -14,27 +14,21 @@
 
 ## Description
 
-_This takes a quiz created by career coach Mary Blalock and allows users to get a calculated personality index that measures their_
+_This takes a quiz created by career coach Mary Blalock and allows users to get a calculated personality index that measures their personality as an index of six point_
 
-### Research & Planning Log
-#### Friday, 09/17
-* 8:00 - 11:30 Set up repo and get files together
-* 1:00 - 4:00 Research client goals, outline project plan
-#### Friday, 09/24
-* 8:00 - 11:30 researching Three.js and canvas
-* 1:00 - 5:00 Tutorial on Three.js
-
-## Setup/Installation Requirements
-
-* _Clone repository form github_
-* _Open index.html_
-* _Copy path to Chrome Browser_
-
-
+* _Leader_
+* _Idea-Person_
+* _Researcher_
+* _Motivator_
+* _Organizer_
+* _Camp-Counselor_
 
 
 ## Known Bugs and Future Changes
 
+* _At this time calculation does not work_
+* _Site needs to be mobile compatible_
+* _Deploy to a server_
 
 
 ## License
