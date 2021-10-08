@@ -4,14 +4,6 @@
 
 #### By _**John Blalock**_
 
-## Technologies Used
-
-* _HTML_
-* _CSS_
-* _Bootstrap_
-* _Java Script_
-* _jQuery_
-
 ## Description
 
 _This takes a quiz created by career coach Mary Blalock and allows users to get a calculated personality index that measures their personality as an index of six point_
@@ -23,6 +15,18 @@ _This takes a quiz created by career coach Mary Blalock and allows users to get 
 * _Organizer_
 * _Camp-Counselor_
 
+## Technologies Used
+
+* _HTML_
+* _CSS_
+* _Bootstrap_
+* _Java Script_
+* _jQuery_
+
+## Setup/Installation
+
+* _Download repo from github_
+* _Open the index.html file in your web browser_
 
 ## Known Bugs and Future Changes
 
