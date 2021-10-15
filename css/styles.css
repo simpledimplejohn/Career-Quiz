@@ -60,13 +60,17 @@ label {
 .bottom {
   background-color: whitesmoke;
 }
+
+
 /* buttons and show/hide */
-.step {
+/* .step {
   display: none;
 }
 .step.active {
   display: block;
-}
+} */
+
+
 button.next-btn,
 button.previous-btn,
 button.submit-btn,
