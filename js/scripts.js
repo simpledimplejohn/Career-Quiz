@@ -1,31 +1,28 @@
-let a = 0;
-let b = 0;
-let c = 0;
-let d = 0;
-let e = 0;
-let f = 0;
+let countObject = {a:0,b:0,c:0,d:0,e:0,f:0};
 
 function sortArray(array) {
   for(let i = 0; i < array.length; i ++) {
     if(array[i] === "a") {
-      a ++;
+      countObject.a ++;
     }
     if(array[i] === "b") {
-      b ++;
+      countObject.b ++;
     }
     if(array[i] === "c") {
-      c ++;
+      countObject.c ++;
     }
     if(array[i] === "d") {
-      d ++;
+      countObject.d ++;
     }
     if(array[i] === "e") {
-      e ++;
+      countObject.e ++;
     }
     if(array[i] === "f") {
-      f ++;
+      countObject.f ++;
     }
-    a = Math.floor((a/8)*100)
+  }
+  for(let key in countObject) {
+    console.log(countObject[key], key);
   }
 }
 
@@ -41,7 +38,7 @@ $(document).ready(function() {
     const q7 = $("input:radio[name=q7]:checked").val();
     const q8 = $("input:radio[name=q8]:checked").val();
     
-    let questionArray = [q1,q2,q3,q4,q5,q6,q7,q8];
+    const questionArray = [q1,q2,q3,q4,q5,q6,q7,q8];
     sortArray(questionArray)
 
     $("#a").text(a)
