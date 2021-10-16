@@ -25,6 +25,7 @@ function sortArray(array) {
     if(array[i] === "f") {
       f ++;
     }
+    a = Math.floor((a/8)*100)
   }
 }
 
@@ -43,7 +44,7 @@ $(document).ready(function() {
     let questionArray = [q1,q2,q3,q4,q5,q6,q7,q8];
     sortArray(questionArray)
 
-    $("#a").text(Math.floor((a/8)*100))
+    $("#a").text(a)
     $("#b").text(Math.floor((b/8)*100))
     $("#c").text(Math.floor((c/8)*100))
     $("#d").text(Math.floor((d/8)*100))
