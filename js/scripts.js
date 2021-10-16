@@ -22,7 +22,7 @@ function sortArray(array) {
     }
   }
   for(let key in countObject) {
-    console.log(countObject[key], key);
+    countObject[key] = Math.floor((countObject[key]/8)*100)
   }
 }
 
@@ -41,12 +41,12 @@ $(document).ready(function() {
     const questionArray = [q1,q2,q3,q4,q5,q6,q7,q8];
     sortArray(questionArray)
 
-    $("#a").text(a)
-    $("#b").text(Math.floor((b/8)*100))
-    $("#c").text(Math.floor((c/8)*100))
-    $("#d").text(Math.floor((d/8)*100))
-    $("#e").text(Math.floor((e/8)*100))
-    $("#f").text(Math.floor((f/8)*100))
+    $("#a").prepend(countObject.a)
+    $("#b").prepend(countObject.b)
+    $("#c").prepend(countObject.c)
+    $("#d").prepend(countObject.d)
+    $("#e").prepend(countObject.e)
+    $("#f").prepend(countObject.f)
 
   })
 })
