@@ -1,6 +1,6 @@
-//document.body.innerHTML = "quizConsole.js"
+//
 
-// Next Previous Buttons
+const steps = Array.from(document.querySelectorAll("form .step")); //step array for next buttons
 const nextBtn = document.querySelectorAll("form .next-btn");  //grabs all the next buttons
 const prevBtn = document.querySelectorAll("form .previous-btn"); //grabs all the previous buttons
 
@@ -15,6 +15,20 @@ prevBtn.forEach((button) => {
     changeStep("prev");
   });
 });
+
+// const form = document.querySelector("form"); //
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const inputs = [];
+//   form.querySelectorAll("input").forEach((input) => {
+//     const { name, value } = input;
+//     inputs.push({ name, value });
+//   });
+//   console.log(inputs);
+//   console.log(form)
+//   form.reset();
+//   changeStep("next");
+// });
 
 function changeStep(btn) {
   let index = 0;
