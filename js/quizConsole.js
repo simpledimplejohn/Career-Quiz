@@ -1,11 +1,6 @@
 //
-
-const steps = Array.from(document.querySelectorAll("form .step")); //grabs all the form data and puts in array
 const nextBtn = document.querySelectorAll("form .next-btn");  //grabs all the next buttons
 const prevBtn = document.querySelectorAll("form .previous-btn"); //grabs all the previous buttons
-const form = document.querySelector("form"); //
-
-
 
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {
@@ -17,20 +12,6 @@ prevBtn.forEach((button) => {
   button.addEventListener("click", () => {
     changeStep("prev");
   });
-});
-
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const inputs = [];
-  form.querySelectorAll("input").forEach((input) => {
-    const { name, value } = input;
-    inputs.push({ name, value });
-  });
-  console.log(inputs);
-  console.log(form)
-  form.reset();
-  changeStep("next");
 });
 
 function changeStep(btn) {
