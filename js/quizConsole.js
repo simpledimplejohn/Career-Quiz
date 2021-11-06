@@ -1,4 +1,4 @@
-//document.body.innerHTML = "works"
+//
 
 const steps = Array.from(document.querySelectorAll("form .step")); //grabs all the form data and puts in array
 const nextBtn = document.querySelectorAll("form .next-btn");  //grabs all the next buttons

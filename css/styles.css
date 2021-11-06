@@ -63,12 +63,12 @@ label {
 
 
 /* buttons and show/hide */
-/* .step {
+.step {
   display: none;
 }
 .step.active {
   display: block;
-} */
+} 
 
 
 button.next-btn,

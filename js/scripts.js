@@ -1,3 +1,5 @@
+document.body.innerHTML = "scripts"
+
 let countObject = {a:0,b:0,c:0,d:0,e:0,f:0};
 
 function sortArray(array) {
@@ -29,6 +31,7 @@ function sortArray(array) {
 $(document).ready(function() {
   $('#radio-form').submit(function(event) {
     event.preventDefault();
+
     const q1 = $("input:radio[name=q1]:checked").val();
     const q2 = $("input:radio[name=q2]:checked").val();
     const q3 = $("input:radio[name=q3]:checked").val();
