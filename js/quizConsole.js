@@ -1,8 +1,8 @@
 //
 
-const steps = Array.from(document.querySelectorAll("form .step")); //step array for next buttons
-const nextBtn = document.querySelectorAll("form .next-btn");  //grabs all the next buttons
-const prevBtn = document.querySelectorAll("form .previous-btn"); //grabs all the previous buttons
+const steps = Array.from(document.querySelectorAll(".step")); //step array for next buttons puts in array
+const nextBtn = document.querySelectorAll(".next-btn");  //grabs all the next buttons
+const prevBtn = document.querySelectorAll(".previous-btn"); //grabs all the previous buttons 
 
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {
@@ -16,25 +16,12 @@ prevBtn.forEach((button) => {
   });
 });
 
-// const form = document.querySelector("form"); //
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   const inputs = [];
-//   form.querySelectorAll("input").forEach((input) => {
-//     const { name, value } = input;
-//     inputs.push({ name, value });
-//   });
-//   console.log(inputs);
-//   console.log(form)
-//   form.reset();
-//   changeStep("next");
-// });
 
 function changeStep(btn) {
   let index = 0;
   const active = document.querySelector(".active");
   index = steps.indexOf(active);
-  steps[index].classList.remove("active");
+  steps[index].classList.remove("active"); 
   if (btn === "next") {
     index++;
   } else if (btn === "prev") {
@@ -73,6 +60,14 @@ function sortArray(array) {
   }
 }
 
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const q1 = document.querySelector('input[name="q1"]:checked')
+  console.log(q1);
+})
+
+/*
 $('#radio-form').submit(function(event) {
   event.preventDefault();
 
@@ -98,3 +93,4 @@ $('#radio-form').submit(function(event) {
   changeStep("next");
 
 });
+*/

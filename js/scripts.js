@@ -1,5 +1,20 @@
 //document.body.innerHTML = "scripts"
 
+
+const form = document.querySelector("form"); //
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputs = [];
+  form.querySelectorAll("input").forEach((input) => {
+    const { name, value } = input;
+    inputs.push({ name, value });
+  });
+  console.log(inputs);
+  console.log(form)
+  form.reset();
+  changeStep("next");
+});
+
 let countObject = {a:0,b:0,c:0,d:0,e:0,f:0};
 
 function sortArray(array) {
