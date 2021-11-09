@@ -55,9 +55,9 @@ function sortArray(array) {
       countObject.f ++;
     }
   }
-  // for(let key in countObject) {
-  //   countObject[key] = Math.floor((countObject[key]/8)*100)
-  // }
+  for(let key in countObject) {
+    countObject[key] = Math.floor((countObject[key]/8)*100)
+  }
 }
 
 const form = document.querySelector("form");
