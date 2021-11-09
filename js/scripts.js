@@ -1,21 +1,5 @@
-//document.body.innerHTML = "scripts"
-
-
-const form = document.querySelector("form"); //
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const inputs = [];
-  form.querySelectorAll("input").forEach((input) => {
-    const { name, value } = input;
-    inputs.push({ name, value });
-  });
-  console.log(inputs);
-  console.log(form)
-  form.reset();
-  changeStep("next");
-});
-
 let countObject = {a:0,b:0,c:0,d:0,e:0,f:0};
+let nameObject = {a:"Social",b:"Organized",c:"Investigative",d:"Creative Problem Solving", e: "Driven", f: "Leadership"}
 
 function sortArray(array) {
   for(let i = 0; i < array.length; i ++) {
@@ -38,32 +22,20 @@ function sortArray(array) {
       countObject.f ++;
     }
   }
-  for(let key in countObject) {
-    countObject[key] = Math.floor((countObject[key]/8)*100)
-  }
+  // for(let key in countObject) {
+  //   countObject[key] = Math.floor((countObject[key]/8)*100)
+  // }
 }
 
+function objectArraySort() {
 
-$('#radio-form').submit(function(event) {
-  event.preventDefault();
+}
 
-  const q1 = $("input:radio[name=q1]:checked").val();
-  const q2 = $("input:radio[name=q2]:checked").val();
-  const q3 = $("input:radio[name=q3]:checked").val();
-  const q4 = $("input:radio[name=q4]:checked").val();
-  const q5 = $("input:radio[name=q5]:checked").val();
-  const q6 = $("input:radio[name=q6]:checked").val();
-  const q7 = $("input:radio[name=q7]:checked").val();
-  const q8 = $("input:radio[name=q8]:checked").val();
-  
-  const questionArray = [q1,q2,q3,q4,q5,q6,q7,q8];
+function inputOutput(questionArray) {
   sortArray(questionArray);
+  let numArray = Object.values(countObject);
+  console.log(countObject)
+  return numArray
+}
 
-  $("#a").prepend(countObject.a);
-  $("#b").prepend(countObject.b);
-  $("#c").prepend(countObject.c);
-  $("#d").prepend(countObject.d);
-  $("#e").prepend(countObject.e);
-  $("#f").prepend(countObject.f);
-
-});
+console.log(inputOutput(["a","b","c","d","e","f","a","b"]))

@@ -33,6 +33,8 @@ function changeStep(btn) {
 //quiz
 
 let countObject = {a:0,b:0,c:0,d:0,e:0,f:0};
+let nameObject = {a:"Social",b:"Organized",c:"Investigative",d:"Creative Problem Solving", e: "Driven", f: "Leadership"}
+
 
 function sortArray(array) {
   for(let i = 0; i < array.length; i ++) {
@@ -55,9 +57,12 @@ function sortArray(array) {
       countObject.f ++;
     }
   }
-  for(let key in countObject) {
-    countObject[key] = Math.floor((countObject[key]/8)*100)
-  }
+  // for(let key in countObject) {
+  //   countObject[key] = Math.floor((countObject[key]/8)*100)
+  // }
+}
+function topTwo(object) {
+
 }
 
 const form = document.querySelector("form");
@@ -78,10 +83,6 @@ form.addEventListener("submit", (e) => {
 
   document.querySelector("#a").innerHTML = countObject.a;
   document.querySelector("#b").innerHTML = countObject.b;
-  document.querySelector("#c").innerHTML = countObject.c;
-  document.querySelector("#d").innerHTML = countObject.d;
-  document.querySelector("#e").innerHTML = countObject.e;
-  document.querySelector("#f").innerHTML = countObject.f;
 
   changeStep("next");
 })
