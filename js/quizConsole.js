@@ -55,9 +55,9 @@ function sortArray(array) {
       countObject.f ++;
     }
   }
-  for(let key in countObject) {
-    countObject[key] = Math.floor((countObject[key]/8)*100)
-  }
+  // for(let key in countObject) {
+  //   countObject[key] = Math.floor((countObject[key]/8)*100)
+  // }
 }
 
 const form = document.querySelector("form");
@@ -70,11 +70,20 @@ form.addEventListener("submit", (e) => {
   const q5 = document.querySelector('input[name="q5"]:checked').value;
   const q6 = document.querySelector('input[name="q6"]:checked').value;
   const q7 = document.querySelector('input[name="q7"]:checked').value;
-  const q8 = document.querySelector('input[name="q1"]:checked').value;
+  const q8 = document.querySelector('input[name="q8"]:checked').value;
 
   const questionArray = [q1,q2,q3,q4,q5,q6,q7,q8];
-  sortArray(questionArray)
+  sortArray(questionArray);
   console.log(countObject);
+
+  document.querySelector("#a").innerHTML = countObject.a;
+  document.querySelector("#b").innerHTML = countObject.b;
+  document.querySelector("#c").innerHTML = countObject.c;
+  document.querySelector("#d").innerHTML = countObject.d;
+  document.querySelector("#e").innerHTML = countObject.e;
+  document.querySelector("#f").innerHTML = countObject.f;
+
+  changeStep("next");
 })
 
 
