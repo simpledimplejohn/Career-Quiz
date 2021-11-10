@@ -31,7 +31,31 @@ function sortArray(array) {
   // }
 }
 
-
+function findFirstPlace(numArray) {
+  let max = numArray[0];
+  let maxIndex = 0;
+  for (let i = 1; i < numArray.length; i++) {
+    if(numArray[i] > max) {
+      maxIndex = i;
+      max = numArray[i];
+    }
+  }
+  topProfileName = nameArray[maxIndex];
+  topScore = maxIndex;
+  numArray[maxIndex] = 0;
+}
+function findSecondPlace(numArray) {
+  let max = numArray[0];
+  let maxIndex = 0;
+  for (let i = 1; i < numArray.length; i++) {
+    if(numArray[i] > max) {
+      maxIndex = i;
+      max = numArray[i];
+    }
+  }
+  secondProfileName = nameArray[maxIndex];
+  secondScore = maxIndex;
+}
 
 function inputOutput(questionArray) {
   sortArray(questionArray);
