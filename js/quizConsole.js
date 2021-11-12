@@ -89,12 +89,18 @@ function score() {
 }
 
 function printToDOM(){
-  console.log("first place: ")
+  if (firstArray.length > 1) {
+    document.getElementById("top-header").outerInner = 'Top Score is:'
+  }
+  // } else {
+  //   document.getElementById("top-score").outerHTML = '<h3>You have the following top scores</h3>'
+  // }
+
   for (let i = 0; i < firstArray.length; i++) {
     // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
-    document.getElementById("top-score").outerHTML = `<li>${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}</li>`
+    document.getElementById("top-list").outerHTML = `<li>${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}</li>`
   }
-  console.log("second place: ")
+
   for (let i = 0; i < secondArray.length; i++) {
     // console.log(`${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}`)  }
     document.getElementById("second-score").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
@@ -107,7 +113,6 @@ form.addEventListener("submit", (e) => {
   let questionArray = []
   let elements = document.getElementById("radio-form").elements;
   for (var i = 0, element; element = elements[i++];) {
-    
     if (element.checked === true){
       questionArray.push(element.value)
       
