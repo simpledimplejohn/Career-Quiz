@@ -32,51 +32,51 @@ function changeStep(btn) {
 
 //quiz
 
-let countObject = {a:0,b:0,c:0,d:0,e:0,f:0};
-let nameObject = {a:"Social",b:"Organized",c:"Investigative",d:"Creative Problem Solving", e: "Driven", f: "Leadership"}
-
+let nameObject = {Social:0, Organized:0, Investigative:0, Creative:0, Driving:0, Leadership:0}
+let firstArray = [];
+let secondArray = [];
+let maxScore = 0
+let secondScore = 0;
 
 function sortArray(array) {
   for(let i = 0; i < array.length; i ++) {
     if(array[i] === "a") {
-      countObject.a ++;
+      nameObject.social ++;
     }
     if(array[i] === "b") {
-      countObject.b ++;
+      nameObject.Organized ++;
     }
     if(array[i] === "c") {
-      countObject.c ++;
+      nameObject.Investigative ++;
     }
     if(array[i] === "d") {
-      countObject.d ++;
+      nameObject.Creative ++;
     }
     if(array[i] === "e") {
-      countObject.e ++;
+      nameObject.Driving ++;
     }
     if(array[i] === "f") {
-      countObject.f ++;
+      nameObject.Leadership ++;
     }
   }
   // for(let key in countObject) {
   //   countObject[key] = Math.floor((countObject[key]/8)*100)
   // }
 }
-function topTwo(object) {
 
-}
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let questionArray = []
-  var elements = document.getElementById("radio-form").elements;
+  let elements = document.getElementById("radio-form").elements;
   for (var i = 0, element; element = elements[i++];) {
-    if (element.checked === true){
+    if (element.checked === true && element.value === ""){
       questionArray.push(element.value)
     }
   }
   sortArray(questionArray);
-  console.log(countObject);
+  console.log(nameObject);
 
   // document.querySelector("#a").innerHTML = countObject.a;
   // document.querySelector("#b").innerHTML = countObject.b;
