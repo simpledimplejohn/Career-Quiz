@@ -41,7 +41,7 @@ let secondScore = 0;
 function sortArray(array) {
   for(let i = 0; i < array.length; i ++) {
     if(array[i] === "a") {
-      nameObject.social ++;
+      nameObject.Social ++;
     }
     if(array[i] === "b") {
       nameObject.Organized ++;
@@ -63,7 +63,43 @@ function sortArray(array) {
   //   countObject[key] = Math.floor((countObject[key]/8)*100)
   // }
 }
+function score() {
 
+  for(const property in nameObject) {
+    if(nameObject[property] > maxScore) maxScore = nameObject[property]
+  }
+  //console.log(maxScore);
+  for (const property in nameObject) {
+    if(nameObject[property] === maxScore) {
+      //console.log(`Top Score = ${property} of ${nameObject[property]}`)
+      firstArray.push({[property]:nameObject[property]})
+      nameObject[property] = 0;
+    }
+  }
+  //console.log(nameObject)
+  for(const property in nameObject) {
+    if(nameObject[property] > secondScore) secondScore = nameObject[property]
+  }
+  //console.log(secondScore)
+  for(const property in nameObject) {
+    if(nameObject[property] === secondScore) {
+      secondArray.push({[property]:nameObject[property]})
+    }
+  }
+}
+
+function printToDOM(){
+  console.log("first place: ")
+  for (let i = 0; i < firstArray.length; i++) {
+    // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
+    document.getElementById("top-score").outerHTML = `<li>${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}</li>`
+  }
+  console.log("second place: ")
+  for (let i = 0; i < secondArray.length; i++) {
+    // console.log(`${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}`)  }
+    document.getElementById("second-score").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
+  }
+}
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
@@ -71,12 +107,17 @@ form.addEventListener("submit", (e) => {
   let questionArray = []
   let elements = document.getElementById("radio-form").elements;
   for (var i = 0, element; element = elements[i++];) {
-    if (element.checked === true && element.value === ""){
+    
+    if (element.checked === true){
       questionArray.push(element.value)
+      
     }
   }
+
+  // console.log(questionArray)
   sortArray(questionArray);
-  console.log(nameObject);
+  score()
+  printToDOM();
 
   // document.querySelector("#a").innerHTML = countObject.a;
   // document.querySelector("#b").innerHTML = countObject.b;
