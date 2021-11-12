@@ -88,25 +88,28 @@ function score() {
   }
 }
 
-function printToDOM(){
-  if (firstArray.length > 1) {
-    document.getElementById("top-header").outerInner = 'Top Score is:'
+function printFirst(){
+  if (firstArray.length === 1) {
+    document.getElementById("top-header").innerHTML = 'Top Score is:'
+  } else {
+    document.getElementById("top-header").innerHTML = 'You Have Multiple Top Scores: '
   }
-  // } else {
-  //   document.getElementById("top-score").outerHTML = '<h3>You have the following top scores</h3>'
-  // }
-
   for (let i = 0; i < firstArray.length; i++) {
     // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
     document.getElementById("top-list").outerHTML = `<li>${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}</li>`
   }
-
+}
+function printSecond(){
+  if (secondArray.length === 1) {
+    document.getElementById("second-header").innerHTML = 'Second Score is:'
+  } else {
+    document.getElementById("second-header").innerHTML = 'You Have Multiple Second Scores: '
+  }
   for (let i = 0; i < secondArray.length; i++) {
-    // console.log(`${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}`)  }
-    document.getElementById("second-score").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
+    // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
+    document.getElementById("second-list").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
   }
 }
-
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -122,7 +125,8 @@ form.addEventListener("submit", (e) => {
   // console.log(questionArray)
   sortArray(questionArray);
   score()
-  printToDOM();
+  printFirst();
+  printSecond();
 
   // document.querySelector("#a").innerHTML = countObject.a;
   // document.querySelector("#b").innerHTML = countObject.b;
