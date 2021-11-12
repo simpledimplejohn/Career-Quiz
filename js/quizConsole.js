@@ -68,21 +68,18 @@ function topTwo(object) {
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const q1 = document.querySelector('input[name="q1"]:checked').value;
-  const q2 = document.querySelector('input[name="q2"]:checked').value;
-  const q3 = document.querySelector('input[name="q3"]:checked').value;
-  const q4 = document.querySelector('input[name="q4"]:checked').value;
-  const q5 = document.querySelector('input[name="q5"]:checked').value;
-  const q6 = document.querySelector('input[name="q6"]:checked').value;
-  const q7 = document.querySelector('input[name="q7"]:checked').value;
-  const q8 = document.querySelector('input[name="q8"]:checked').value;
-
-  const questionArray = [q1,q2,q3,q4,q5,q6,q7,q8];
+  let questionArray = []
+  var elements = document.getElementById("radio-form").elements;
+  for (var i = 0, element; element = elements[i++];) {
+    if (element.checked === true){
+      questionArray.push(element.value)
+    }
+  }
   sortArray(questionArray);
   console.log(countObject);
 
-  document.querySelector("#a").innerHTML = countObject.a;
-  document.querySelector("#b").innerHTML = countObject.b;
+  // document.querySelector("#a").innerHTML = countObject.a;
+  // document.querySelector("#b").innerHTML = countObject.b;
 
   changeStep("next");
 })
