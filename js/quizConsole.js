@@ -63,58 +63,58 @@ function sortArray(array) {
   //   countObject[key] = Math.floor((countObject[key]/8)*100)
   // }
 }
-function score() {
 
-  for(const property in nameObject) {
+function score() { // finds the top two scores in the object and returns each key:value pair to an array
+
+  for(const property in nameObject) { // get the letters with the highest score
     if(nameObject[property] > maxScore) maxScore = nameObject[property]
   }
   //console.log(maxScore);
-  for (const property in nameObject) {
+  for (const property in nameObject) { // put these key:value pairs into the array
     if(nameObject[property] === maxScore) {
       //console.log(`Top Score = ${property} of ${nameObject[property]}`)
       firstArray.push({[property]:nameObject[property]})
-      nameObject[property] = 0;
+      nameObject[property] = 0; //sets highest score to zero, making second score the highest
     }
   }
   //console.log(nameObject)
-  for(const property in nameObject) {
+  for(const property in nameObject) { //again for second 
     if(nameObject[property] > secondScore) secondScore = nameObject[property]
   }
   //console.log(secondScore)
   for(const property in nameObject) {
-    if(nameObject[property] === secondScore) {
+    if(nameObject[property] === secondScore) { //again for second
       secondArray.push({[property]:nameObject[property]})
     }
   }
 }
 
-function printFirst(){
+function printFirst(){ // prints the first place score or scores
   if (firstArray.length === 1) {
-    document.getElementById("top-header").innerHTML = 'Top Score is:'
+    document.getElementById("top-header").innerHTML = 'Top Score is:';
   } else {
-    document.getElementById("top-header").innerHTML = 'You Have Multiple Top Scores: '
+    document.getElementById("top-header").innerHTML = 'You Have Multiple Top Scores: ';
   }
-  for (let i = 0; i < firstArray.length; i++) {
-    // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
-    document.getElementById("top-list").outerHTML = `<li>${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}</li>`
-  }
+  document.getElementById("top-list").outerHTML = `<li>${Object.keys(firstArray[0])}, score of: ${Object.values(firstArray[0])}</li>`;
 }
-function printSecond(){
-  if (secondArray.length === 1) {
-    document.getElementById("second-header").innerHTML = 'Second Score is:'
-  } else {
-    document.getElementById("second-header").innerHTML = 'You Have Multiple Second Scores: '
-  }
-  for (let i = 0; i < secondArray.length; i++) {
-    // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
-    document.getElementById("second-list").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
+function printSecond(){ //prints the second place score or scores
+  if(firstArray.length === 1) {
+    if (secondArray.length === 1) {
+      document.getElementById("second-header").innerHTML = 'Second Score is:';
+    } else {
+      document.getElementById("second-header").innerHTML = 'You Have Multiple Second Scores: ';
+    }
+    for (let i = 0; i < secondArray.length; i++) {
+      // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
+      document.getElementById("second-list").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
+    }
   }
 }
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let questionArray = []
-  let elements = document.getElementById("radio-form").elements;
+  let elements = document.getElementById("radio-form").elements; // gets all the values from the form and pushes into an array
   for (var i = 0, element; element = elements[i++];) {
     if (element.checked === true){
       questionArray.push(element.value)
@@ -123,6 +123,7 @@ form.addEventListener("submit", (e) => {
   }
 
   // console.log(questionArray)
+  questionArray = ["a","a","a","e","c","c","c","c"]
   sortArray(questionArray);
   score()
   printFirst();
