@@ -1,72 +1,144 @@
-let countObject = {a:0,b:0,c:0,d:0,e:0,f:0};
-let nameArray = ["Social", "Organized", "Investigative", "Creative Problem Solving", "Driving", "Leadership"]
-let topProfileName = "";
-let topScore = "";
-let secondProfileName = "";
-let secondScore = "";
+// //
+
+const steps = Array.from(document.querySelectorAll(".step")); //step array for next buttons puts in array
+const nextBtn = document.querySelectorAll(".next-btn");  //grabs all the next buttons
+const prevBtn = document.querySelectorAll(".previous-btn"); //grabs all the previous buttons 
+
+nextBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("next");
+  });
+});
+
+prevBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("prev");
+  });
+});
+
+
+function changeStep(btn) {
+  let index = 0;
+  const active = document.querySelector(".active");
+  index = steps.indexOf(active);
+  steps[index].classList.remove("active"); 
+  if (btn === "next") {
+    index++;
+  } else if (btn === "prev") {
+    index--;
+  }
+  steps[index].classList.add("active");
+}
+
+//quiz
+let newNameArray = [{name: "Social", score: 0},
+                    {name: "Organized", score: 0},
+                    {name: "Investigative", score: 0},
+                    {name: "Creative", score: 0},
+                    {name: "Driving", score: 0},
+                    {name: "Leadership", score: 0},]
+let firstArray = [];
+let secondArray = [];
+let maxScore = 0
+let secondScore = 0;
 
 function sortArray(array) {
   for(let i = 0; i < array.length; i ++) {
     if(array[i] === "a") {
-      countObject.a ++;
+      newNameArray.find(i => i.name === 'Social').score ++;
     }
     if(array[i] === "b") {
-      countObject.b ++;
+      newNameArray.find(i => i.name === 'Organized').score ++;
     }
     if(array[i] === "c") {
-      countObject.c ++;
+      newNameArray.find(i => i.name === 'Investigative').score ++;
     }
     if(array[i] === "d") {
-      countObject.d ++;
+      newNameArray.find(i => i.name === 'Creative').score ++;
     }
     if(array[i] === "e") {
-      countObject.e ++;
+      newNameArray.find(i => i.name === 'Driving').score ++;
     }
     if(array[i] === "f") {
-      countObject.f ++;
+      newNameArray.find(i => i.name === 'Leadership').score ++;
     }
   }
   // for(let key in countObject) {
   //   countObject[key] = Math.floor((countObject[key]/8)*100)
   // }
 }
-
-function findFirstPlace(numArray) {
-  let max = numArray[0];
-  let maxIndex = 0;
-  for (let i = 1; i < numArray.length; i++) {
-    if(numArray[i] > max) {
-      maxIndex = i;
-      max = numArray[i];
+function score() {
+  //////////// FIRST PLACE //////////////////////
+  newNameArray.forEach(element => {
+    // console.log(`element: ${element.score}`)
+    if(element.score > maxScore) maxScore = element.score
+  })
+  newNameArray.forEach(element => { //push max scores to array if more than one
+    if(element.score === maxScore) {
+      firstArray.push({[element.name]:[element.score]})
+      element.score = 0;
     }
-  }
-  topProfileName = nameArray[maxIndex];
-  topScore = maxIndex;
-  numArray[maxIndex] = 0;
-}
-function findSecondPlace(numArray) {
-  let max = numArray[0];
-  let maxIndex = 0;
-  for (let i = 1; i < numArray.length; i++) {
-    if(numArray[i] > max) {
-      maxIndex = i;
-      max = numArray[i];
-    }
-  }
-  secondProfileName = nameArray[maxIndex];
-  secondScore = maxIndex;
+  })
+  ///////////// SECOND PLACE ///////////////////
+  newNameArray.forEach(element => {
+    if(element.score > secondScore) secondScore = element.score
+  })
+  newNameArray.forEach(element => {
+    if(element.score === secondScore) secondArray.push({[element.name]:[element.score]})
+  })
 }
 
-function inputOutput(questionArray) {
+function printFirst(){ // prints the first place score or scores
+  if (firstArray.length === 1) {
+    document.getElementById("top-header").innerHTML = 'Top Score is:';
+  } else {
+    document.getElementById("top-header").innerHTML = 'You Have Multiple Top Scores: ';
+  }
+  firstArray.forEach(element => {
+    console.log(Object.keys(element))
+    document.getElementById("top-list").outerHTML = `<li>${Object.keys(element)}</li>`
+  })
+  // document.getElementById("top-list").outerHTML = `<li>${Object.keys(firstArray[0])}, score of: ${Object.values(firstArray[0])}</li>`;
+}
+// function printSecond(){ //prints the second place score or scores
+//   if(firstArray.length === 1) {
+//     if (secondArray.length === 1) {
+//       document.getElementById("second-header").innerHTML = 'Second Score is:';
+//     } else {
+//       document.getElementById("second-header").innerHTML = 'You Have Multiple Second Scores: ';
+//     }
+//     for (let i = 0; i < secondArray.length; i++) {
+//       // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
+//       document.getElementById("second-list").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
+//     }
+//   }
+// }
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let questionArray = []
+  let elements = document.getElementById("radio-form").elements; // gets all the values from the form and pushes into an array
+  for (var i = 0, element; element = elements[i++];) {
+    if (element.checked === true){
+      questionArray.push(element.value)
+      
+    }
+  }
+
+  // console.log(questionArray)
+  questionArray = ["a","a","b","b","c","c","d","d"]
   sortArray(questionArray);
-  console.log(countObject)
-  let numArray = Object.values(countObject);
-  console.log(numArray)
-  //et countArray = Object.values()
-  findFirstPlace(questionArray);
-  findSecondPlace(questionArray);
-  console.log(`First Place Profile: ${topProfileName} Score of: ${topScore}`)
-  console.log(`Second Place Profile: ${secondProfileName} Score of: ${secondScore}`)
-}
+  console.log(firstArray)
+  console.log(secondArray)
+  score()
+  printFirst();
+  printSecond();
 
-inputOutput(["a","b","c","d","e","f","a","b"])
+  // document.querySelector("#a").innerHTML = countObject.a;
+  // document.querySelector("#b").innerHTML = countObject.b;
+
+  changeStep("next");
+})
+
+
+
