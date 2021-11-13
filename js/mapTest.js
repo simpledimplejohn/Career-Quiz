@@ -47,15 +47,27 @@ function topTwo() {
   newNameArray.forEach(element => { //push max scores to array if more than one
     if(element.score === maxScore) {
       firstArray.push({[element.name]:[element.score]})
+      element.score = 0;
     }
+  })
+  ///////////// SECOND PLACE ///////////////////
+  newNameArray.forEach(element => {
+    if(element.score > secondScore) secondScore = element.score
+  })
+  newNameArray.forEach(element => {
+    if(element.score === secondScore) secondArray.push({[element.name]:[element.score]})
   })
 }
 
-questionArray = ["a","a","a","a","c","c","c","c"]
+// first place arrays
+// questionArray = ["a","a","a","a","c","c","c","c"]
 // questionArray = ["a","a","b","b","c","c","d","d"]
+// second place arrays
+questionArray = ["a","a","a","a","c","c","d","d"]
 sortArray(questionArray)
 topTwo()
 console.log(firstArray)
+console.log(secondArray)
 // console.log(newNameArray)
 
 

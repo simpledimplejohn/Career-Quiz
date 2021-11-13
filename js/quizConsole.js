@@ -1,34 +1,34 @@
 // //
 
-// const steps = Array.from(document.querySelectorAll(".step")); //step array for next buttons puts in array
-// const nextBtn = document.querySelectorAll(".next-btn");  //grabs all the next buttons
-// const prevBtn = document.querySelectorAll(".previous-btn"); //grabs all the previous buttons 
+const steps = Array.from(document.querySelectorAll(".step")); //step array for next buttons puts in array
+const nextBtn = document.querySelectorAll(".next-btn");  //grabs all the next buttons
+const prevBtn = document.querySelectorAll(".previous-btn"); //grabs all the previous buttons 
 
-// nextBtn.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     changeStep("next");
-//   });
-// });
+nextBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("next");
+  });
+});
 
-// prevBtn.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     changeStep("prev");
-//   });
-// });
+prevBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("prev");
+  });
+});
 
 
-// function changeStep(btn) {
-//   let index = 0;
-//   const active = document.querySelector(".active");
-//   index = steps.indexOf(active);
-//   steps[index].classList.remove("active"); 
-//   if (btn === "next") {
-//     index++;
-//   } else if (btn === "prev") {
-//     index--;
-//   }
-//   steps[index].classList.add("active");
-// }
+function changeStep(btn) {
+  let index = 0;
+  const active = document.querySelector(".active");
+  index = steps.indexOf(active);
+  steps[index].classList.remove("active"); 
+  if (btn === "next") {
+    index++;
+  } else if (btn === "prev") {
+    index--;
+  }
+  steps[index].classList.add("active");
+}
 
 //quiz
 let newNameArray = [{name: "Social", score: 0},
@@ -75,7 +75,7 @@ function score() { // finds the top two scores in the object and returns each ke
 
 
 
-  for(const property in nameObject) { // get the letters with the highest score
+  for(const property in nameObject) { // get the letåters with the highest score
     if(nameObject[property] > maxScore) maxScore = nameObject[property]
   }
   //console.log(maxScore);
