@@ -31,7 +31,12 @@ function changeStep(btn) {
 }
 
 //quiz
-
+let newNameArray = [{name: "Social", score: 0},
+                    {name: "Organized", score: 0},
+                    {name: "Investigative", score: 0},
+                    {name: "Creative", score: 0},
+                    {name: "Driving", score: 0},
+                    {name: "Leadership", score: 0},]
 let nameObject = {Social:0, Organized:0, Investigative:0, Creative:0, Driving:0, Leadership:0}
 let firstArray = [];
 let secondArray = [];
@@ -41,22 +46,22 @@ let secondScore = 0;
 function sortArray(array) {
   for(let i = 0; i < array.length; i ++) {
     if(array[i] === "a") {
-      nameObject.Social ++;
+      newNameArray.find(i => i.name === 'Social').score ++;
     }
     if(array[i] === "b") {
-      nameObject.Organized ++;
+      newNameArray.find(i => i.name === 'Organized').score ++;
     }
     if(array[i] === "c") {
-      nameObject.Investigative ++;
+      newNameArray.find(i => i.name === 'Investigative').score ++;
     }
     if(array[i] === "d") {
-      nameObject.Creative ++;
+      newNameArray.find(i => i.name === 'Creative').score ++;
     }
     if(array[i] === "e") {
-      nameObject.Driving ++;
+      newNameArray.find(i => i.name === 'Driving').score ++;
     }
     if(array[i] === "f") {
-      nameObject.Leadership ++;
+      newNameArray.find(i => i.name === 'Leadership').score ++;
     }
   }
   // for(let key in countObject) {
@@ -64,7 +69,11 @@ function sortArray(array) {
   // }
 }
 
+
+
 function score() { // finds the top two scores in the object and returns each key:value pair to an array
+
+
 
   for(const property in nameObject) { // get the letters with the highest score
     if(nameObject[property] > maxScore) maxScore = nameObject[property]
@@ -125,6 +134,7 @@ form.addEventListener("submit", (e) => {
   // console.log(questionArray)
   questionArray = ["a","a","a","e","c","c","c","c"]
   sortArray(questionArray);
+  console.log(newNameArray)
   score()
   printFirst();
   printSecond();
