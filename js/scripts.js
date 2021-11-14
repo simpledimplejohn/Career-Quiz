@@ -96,7 +96,7 @@ function printFirst(){ // prints the first place score or scores
     document.getElementById("top-header").innerHTML = 'You Have Multiple Top Scores: ';
   }
   firstArray.forEach(element => {
-    console.log(Object.keys(element))
+    // console.log(Object.keys(element))
       firstString += `<li>${Object.keys(element)}, Score of: ${Object.values(element)}</li>`
   })
   document.getElementById("top-list").outerHTML = firstString;
@@ -127,10 +127,10 @@ form.addEventListener("submit", (e) => {
     }
   }
 
-  // console.log(questionArray)
+  console.log(questionArray)
   // questionArray = ["a","a","b","b","c","c","d","d"] // four first places
   // questionArray = ["a","a","b","b","c","c","d","e"] // three first places
-  questionArray = ["a","a","a","b","c","d","e","f"] // one first place five second place
+  // questionArray = ["a","a","a","b","c","d","e","f"] // one first place five second place
   sortArray(questionArray);
   console.log(firstArray)
   console.log(secondArray)
