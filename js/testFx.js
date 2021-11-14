@@ -4,4 +4,10 @@ const sinScore = [{name: "Lust", score:2},{name:"Sloth", score:2},{name:"Glutton
 const simpleSinScore = [{Lust:2},{Sloth:2},{Gluttony:2}];
 
 let topHeader = document.getElementById("top-list");
-topHeader.outerHTML = "Works!"
+let printString = ""
+
+sinScore.forEach(element => {
+  printString += `<li>${element.name} score of: ${element.score}</li>`
+});
+
+topHeader.outerHTML = printString; 
