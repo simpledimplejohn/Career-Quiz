@@ -89,6 +89,7 @@ function score() {
 }
 
 function printFirst(){ // prints the first place score or scores
+  let firstString = ""
   if (firstArray.length === 1) {
     document.getElementById("top-header").innerHTML = 'Top Score is:';
   } else {
@@ -96,23 +97,24 @@ function printFirst(){ // prints the first place score or scores
   }
   firstArray.forEach(element => {
     console.log(Object.keys(element))
-    document.getElementById("top-list").outerHTML = `<li>${Object.keys(element)}</li>`
+      firstString += `<li>${Object.keys(element)}, Score of: ${Object.values(element)}</li>`
   })
-  // document.getElementById("top-list").outerHTML = `<li>${Object.keys(firstArray[0])}, score of: ${Object.values(firstArray[0])}</li>`;
+  document.getElementById("top-list").outerHTML = firstString;
 }
-// function printSecond(){ //prints the second place score or scores
-//   if(firstArray.length === 1) {
-//     if (secondArray.length === 1) {
-//       document.getElementById("second-header").innerHTML = 'Second Score is:';
-//     } else {
-//       document.getElementById("second-header").innerHTML = 'You Have Multiple Second Scores: ';
-//     }
-//     for (let i = 0; i < secondArray.length; i++) {
-//       // console.log(`${Object.keys(firstArray[i])}, score of: ${Object.values(firstArray[i])}`)
-//       document.getElementById("second-list").outerHTML = `<li>${Object.keys(secondArray[i])}, score of: ${Object.values(secondArray[i])}</li>`
-//     }
-//   }
-// }
+function printSecond(){ //prints the second place score or scores
+  let secondString = "";
+  if(firstArray.length === 1) {
+    if (secondArray.length === 1) {
+      document.getElementById("second-header").innerHTML = 'Second Score is:';
+    } else {
+      document.getElementById("second-header").innerHTML = 'You Have Multiple Second Scores: ';
+    }
+    secondArray.forEach(element => {
+      secondString += `<li>${Object.keys(element)}, Score of: ${Object.values(element)}</li>`;
+    });
+    document.getElementById("second-list").outerHTML = secondString;
+  }
+}
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -126,7 +128,9 @@ form.addEventListener("submit", (e) => {
   }
 
   // console.log(questionArray)
-  questionArray = ["a","a","b","b","c","c","d","d"]
+  // questionArray = ["a","a","b","b","c","c","d","d"] // four first places
+  // questionArray = ["a","a","b","b","c","c","d","e"] // three first places
+  questionArray = ["a","a","a","b","c","d","e","f"] // one first place five second place
   sortArray(questionArray);
   console.log(firstArray)
   console.log(secondArray)
